@@ -8,14 +8,15 @@ public class Stopwatch extends JLabel{
     
     public Stopwatch() {
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(task, 0, 1000);
+        timer.scheduleAtFixedRate(task, 0, 1);
     }
 
     public String timeToString(long time) {
         StringBuilder timeText = new StringBuilder();
-        int seconds = (int) (time % 60);
-        int minutes = (int) ((time / 60) % 60);
-        int hours = (int) (time / 3600);
+        int milliseconds = (int) (time % 1000) / 10;
+        int seconds = (int) (time % 60000) / 1000;
+        int minutes = (int) ((time % 3600000) / 60000);
+        int hours = (int) (time / 3600000);
 
         if(hours < 10)
             timeText.append("0");
@@ -27,7 +28,11 @@ public class Stopwatch extends JLabel{
 
         if(seconds < 10)
             timeText.append("0");
-        timeText.append(seconds);
+        timeText.append(seconds + ".");
+
+        if (milliseconds < 10)
+            timeText.append("0");
+        timeText.append(milliseconds);
 
         return timeText.toString();
     }
