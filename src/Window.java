@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Window extends JFrame{
     public final int WIDTH = 500;
-    public final int HEIGHT = 400;
+    public final int HEIGHT = 300;
     private final String WINDOW_TITLE = "Stopwatch";
 
     Window() {
@@ -15,6 +15,7 @@ public class Window extends JFrame{
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+        this.setAlwaysOnTop(true);
         addLabel();
     }
 

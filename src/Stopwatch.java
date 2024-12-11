@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.border.Border;
 
 import java.awt.Color;
+import java.awt.Font;
 
 public class Stopwatch extends JLabel{
     private long time = 0;
@@ -13,17 +14,18 @@ public class Stopwatch extends JLabel{
     private final int HEIGHT = 100;
     
     public Stopwatch(JLabel label) {
-        Border border = BorderFactory.createLineBorder(Color.GREEN, 3);
-        // Timer timer = new Timer();
-        // timer.scheduleAtFixedRate(task, 0, 1);
+        Border border = BorderFactory.createLineBorder(Color.GRAY, 3);
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(task, 0, 1);
 
-        this.setBounds(43, 75, this.WIDTH, this.HEIGHT);
+        this.setBounds(43, 25, this.WIDTH, this.HEIGHT);
         this.setBackground(Color.BLACK);
         this.setBorder(border);
-        this.setForeground(Color.GREEN);
+        this.setForeground(Color.WHITE);
         this.setOpaque(true);
+        this.setHorizontalAlignment(JLabel.CENTER);
+        this.setFont(new Font("Open Sans", Font.PLAIN, 60));
         label.add(this);
-    
     }
 
     public String timeToString(long time) {
@@ -52,13 +54,12 @@ public class Stopwatch extends JLabel{
         return timeText.toString();
     }
 
+    Stopwatch outer = this;
     private TimerTask task = new TimerTask() {
         @Override
         public void run() {
-            // time++;
-            System.out.println(timeToString(time));
+            time++;
+            outer.setText(timeToString(time));
         }
     };
-
-
 }
