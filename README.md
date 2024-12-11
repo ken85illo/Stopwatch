@@ -9,7 +9,7 @@ The workspace is created in VSCode and contains three folders by default, where:
 
 ## Steps
 1. Install the Java Extension Pack for Java using VSCode
-2. Clone the repository using the command 'git clone https://github.com/ken85illo/Stopwatch.git'
+2. Clone the repository using the command `git clone https://github.com/ken85illo/Stopwatch.git`
 3. Open the folder in VSCode
 4. Run the Main.java file
 
