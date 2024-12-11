@@ -7,4 +7,9 @@ The workspace is created in VSCode and contains three folders by default, where:
 - `lib`: the folder to maintain dependencies
 - `bin`: the compiled output files will be generated in this folder by default.
 
-To run the program you need to install the VSCode extension pack for Java Projects and run the Main.java.
+## Steps
+1. Install the Java Extension Pack for Java using VSCode
+2. Clone the repository using the command 'https://github.com/ken85illo/Stopwatch.git'
+3. Open the folder in VSCode
+4. Run the Main.java file
+
