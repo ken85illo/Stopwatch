@@ -12,3 +12,4 @@ The workspace is created in VSCode and contains two folders by default, where:
 3. Open the folder in VSCode
 4. Run the Main.java file
 
+![image](https://github.com/user-attachments/assets/a535d4e4-b07e-4f14-839c-3d1247d67804)
