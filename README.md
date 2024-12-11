@@ -7,3 +7,4 @@ The workspace is created in VSCode and contains three folders by default, where:
 - `lib`: the folder to maintain dependencies
 - `bin`: the compiled output files will be generated in this folder by default.
 
+To run the program you need to install the VSCode extension pack for Java Projects and run the Main.java.
