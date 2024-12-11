@@ -12,14 +12,16 @@ public class Stopwatch extends JLabel{
     private long time = 0;
     private final int WIDTH = 400;
     private final int HEIGHT = 100;
+
+    private boolean paused = true;
     
     public Stopwatch(JLabel label) {
-        Border border = BorderFactory.createLineBorder(Color.GRAY, 3);
+        Border border = BorderFactory.createLineBorder(Color.WHITE, 3);
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(task, 0, 1);
 
         this.setBounds(43, 25, this.WIDTH, this.HEIGHT);
-        this.setBackground(Color.BLACK);
+        this.setBackground(Color.DARK_GRAY);
         this.setBorder(border);
         this.setForeground(Color.WHITE);
         this.setOpaque(true);
@@ -34,32 +36,43 @@ public class Stopwatch extends JLabel{
         int seconds = (int) (time % 60000) / 1000;
         int minutes = (int) ((time % 3600000) / 60000);
         int hours = (int) (time / 3600000);
+        
+        format(hours, timeText);
+        format(minutes, timeText);
+        format(seconds, timeText);
+        format(milliseconds, timeText);
 
-        if(hours < 10)
-            timeText.append("0");
-        timeText.append(hours + ":");
-
-        if(minutes < 10)
-            timeText.append("0");
-        timeText.append(minutes + ":");
-
-        if(seconds < 10)
-            timeText.append("0");
-        timeText.append(seconds + ".");
-
-        if (milliseconds < 10)
-            timeText.append("0");
-        timeText.append(milliseconds);
+        timeText.deleteCharAt(timeText.length() - 1);
+        timeText.setCharAt(timeText.length() - 3, '.');
 
         return timeText.toString();
+    }
+
+    private void format(int time, StringBuilder timeText) {
+        if(time < 10)
+            timeText.append("0");
+        timeText.append(time + ":");
     }
 
     Stopwatch outer = this;
     private TimerTask task = new TimerTask() {
         @Override
         public void run() {
-            time++;
+            if(!paused)
+                time++;
             outer.setText(timeToString(time));
         }
     };
+
+    public void resetTimer() {
+        time = 0;
+    }
+
+    public boolean isPaused() {
+        return paused;
+    }
+
+    public void setPaused(boolean x) {
+        this.paused = x;
+    }
 }
