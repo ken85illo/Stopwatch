@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Button implements ActionListener{
     private final int WIDTH = 120;
@@ -14,10 +14,10 @@ public class Button implements ActionListener{
     JButton startStopButton = new JButton();
     JButton resetButton = new JButton();
 
-    public Button(JLabel label, Stopwatch stopwatch) {
+    public Button(JPanel panel, Stopwatch stopwatch) {
         this.stopwatch = stopwatch;
-        label.add(startStopButton);
-        label.add(resetButton);
+        panel.add(startStopButton);
+        panel.add(resetButton);
 
         initButton(startStopButton, 108, 150, "Start");
         initButton(resetButton, 258, 150, "Reset");

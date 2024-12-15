@@ -20,12 +20,11 @@ public class Window extends JFrame{
     }
 
     private void addLabel() {
-        JLabel label = new JLabel();
-        label.setBackground(Color.GRAY);
-        label.setOpaque(true);
+        JPanel panel = new JPanel(null);
+        panel.setBackground(Color.GRAY);
 
-        this.add(label);
-        Stopwatch stopwatch = new Stopwatch(label);
-        new Button(label, stopwatch);
+        this.add(panel);
+        Stopwatch stopwatch = new Stopwatch(panel);
+        new Button(panel, stopwatch);
     }
 }

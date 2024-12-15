@@ -3,6 +3,7 @@ import java.util.TimerTask;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 import java.awt.Color;
@@ -15,7 +16,7 @@ public class Stopwatch extends JLabel{
 
     private boolean paused = true;
     
-    public Stopwatch(JLabel label) {
+    public Stopwatch(JPanel panel) {
         Border border = BorderFactory.createLineBorder(Color.WHITE, 3);
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(task, 0, 1);
@@ -27,7 +28,7 @@ public class Stopwatch extends JLabel{
         this.setOpaque(true);
         this.setHorizontalAlignment(JLabel.CENTER);
         this.setFont(new Font("Open Sans", Font.PLAIN, 60));
-        label.add(this);
+        panel.add(this);
     }
 
     public String timeToString(long time) {
