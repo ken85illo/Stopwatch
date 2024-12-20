@@ -6,6 +6,10 @@ public class Window extends JFrame{
     public final int HEIGHT = 300;
     private final String WINDOW_TITLE = "Stopwatch";
 
+    public static void main(String[] args) {
+        new Window();
+    }
+    
     Window() {
         ImageIcon icon = new ImageIcon("stopwatch.jpg");
         this.setTitle(WINDOW_TITLE);

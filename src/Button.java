@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -29,6 +30,7 @@ public class Button implements ActionListener{
         button.setFont(new Font("Open Sans", Font.BOLD, 15));
         button.setFocusable(false);
         button.setBackground(Color.LIGHT_GRAY);
+        button.setBorder(BorderFactory.createRaisedBevelBorder());
         button.addActionListener(this);
     }
 
